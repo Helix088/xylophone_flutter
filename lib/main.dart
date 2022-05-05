@@ -11,11 +11,11 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$note.wav');
   }
 
-  Expanded buildButton({MaterialColor color, int note}) {
+  Expanded buildButton({Color color, int note}) {
     return Expanded(
       child: TextButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(color),
+        style: TextButton.styleFrom(
+          backgroundColor: color,
         ),
         onPressed: () {
           playSound(note);
@@ -40,6 +40,7 @@ class XylophoneApp extends StatelessWidget {
               buildButton(color: Colors.teal, note: 5),
               buildButton(color: Colors.blue, note: 6),
               buildButton(color: Colors.purple, note: 7),
+              buildButton(color: Colors.purple[900], note: 8),
             ],
           ),
         ),
